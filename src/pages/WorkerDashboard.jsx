@@ -26,7 +26,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import TaskList from "../components/TaskList";
 
 // import ReviewList from "../components/ReviewList";
-import { AccountCircle } from "@material-ui/icons";
+import { AccountCircle, ExitToApp } from "@material-ui/icons";
 import Popup from "../commons/Popup";
 import UserProfile from "../components/UserProfile";
 import TaskHistory from "../components/TaskHistory";
@@ -145,6 +145,9 @@ export default function WorkerDashboard() {
     const togglePopup = () => {
         setOpen(!open);
     };
+    const handleLogout = () =>{
+        window.location.reload();
+      }
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
     return (
@@ -183,6 +186,13 @@ export default function WorkerDashboard() {
                         onClick={() => setOpenPopup(true)}
                         children={<AccountCircle fontSize="large" />}
                     />
+                    <>
+                    <IconButton 
+                        onClick={handleLogout}
+                        children={<ExitToApp />}
+                        style={{ color: "#fff", flex: 1 }}
+                    />
+                    </>
                 </Toolbar>
             </AppBar>
             <Drawer

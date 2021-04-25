@@ -14,7 +14,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import RateReviewIcon from '@material-ui/icons/RateReview';
-import { AddCircle } from "@material-ui/icons";
+import { AddCircle, ExitToApp } from "@material-ui/icons";
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -145,6 +145,9 @@ export default function Dashboard() {
   const handlePostTask = () => {
     setPopupType("Add")
   }
+  const handleLogout = () =>{
+    window.location.reload();
+  }
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   
 
@@ -190,7 +193,13 @@ export default function Dashboard() {
                 }
             />
           </div>
-
+          <>
+            <IconButton 
+              onClick={handleLogout}
+              children={<ExitToApp />}
+              style={{ color: "#fff", flex: 1 }}
+            />
+          </>
         </Toolbar>
       </AppBar>
       <Drawer

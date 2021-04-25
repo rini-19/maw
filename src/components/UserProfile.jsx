@@ -21,7 +21,7 @@ export default function UserProfile({ setOpenPop }) {
     const handleSubmit = () => {
         axios({
             method: 'patch',
-            url: `${apiUrl}/submitTask/${currentUser._id}`,
+            url: `${apiUrl}/editProfile/${currentUser._id}`,
             data: {
                 userDetails
             }
